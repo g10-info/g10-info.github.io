@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Proyecto Info</title>
+    </head>
+
+<body>
+    {% if request.user.username %}
+        <p>
+            Bienvenido <b>{{request.user.username}}</b>
+        </p>
+
+        <a href="/logout">Cerrar sesión</a>
+    {% else %}
+
+        <a href="/login">Iniciar sesión</a>
+    {% endif %}
+    <hr />
+</body>
+
+</html>
