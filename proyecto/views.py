@@ -26,7 +26,7 @@ def listar_preguntas(request):
         return redirect("/")
     else:
         data = {}
-        preguntas = Pregunta.objects.all().order_by('?')[:3]
+        preguntas = Pregunta.objects.all().order_by('?')[:0]
         for item in preguntas:
             respuestas = Respuesta.objects.filter(id_pregunta=item.id)
             data[item.pregunta]= respuestas
