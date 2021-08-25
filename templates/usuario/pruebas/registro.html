@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    </head>
+
+<body>
+
+<style>
+
+body { font-family: "Open Sans", sans-serif; background: #e9ecef; }
+#hero { width: 100%; height: 100vh; }
+#hero h1 { margin: 0; font-size: 60px; font-weight: 700; line-height: 50px; font-family: "Poppins", sans-serif; }
+#hero p { font-size: 25px; padding-right: 2em; }
+@media (min-width: 1024px) { #hero { background-attachment: fixed; } }
+@media (max-width: 768px) { #hero { height: 100vh; } #hero h1 { font-size: 28px; line-height: 36px; } }
+@media (max-height: 500px) { #hero { height: 120vh; } }
+
+</style>
+
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5s text-xl-start">
+                        <h1 class="display-5 fw-bolder text-primary mb-3">Es la Fakebook</h1>
+                        <p class="lead fw-normal mb-4">
+                            Fakebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                    <div class="right bg-light p-3 rounded-3 shadow-lg mb-5">
+                        <div class="login-form ">
+                            <form method="post">
+
+        {% if form.errors %}
+        <p>Su nombre de usuario y contraseña no coinciden. Por favor revise los datos ingresados e intente nuevamente.</p>
+        {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+
+
+        
+        <div>
+          <input type="submit" value="Registrarse" />
+        </div>
+    </form>
+
+</body>
+
+</html>

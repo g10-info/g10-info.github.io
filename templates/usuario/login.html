@@ -2,63 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <title>Iniciar sesión</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+    <!-- Bootstrap -->
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 </head>
 <body>
+  <div class="bg-image"></div>
+  <div class="container">
+    <div class="pic">
+      <i class="fas fa-user"></i>
+    </div>
+    <h2 class="title">Iniciar sesión</h2>
 
-<style>
 
-body { font-family: "Open Sans", sans-serif; background: #e9ecef; }
-#hero { width: 100%; height: 100vh; }
-#hero h1 { margin: 0; font-size: 60px; font-weight: 700; line-height: 50px; font-family: "Poppins", sans-serif; }
-#hero p { font-size: 25px; padding-right: 2em; }
-@media (min-width: 1024px) { #hero { background-attachment: fixed; } }
-@media (max-width: 768px) { #hero { height: 100vh; } #hero h1 { font-size: 28px; line-height: 36px; } }
-@media (max-height: 500px) { #hero { height: 120vh; } }
+    <form class="form" method="POST">
+        {% csrf_token %}
+      <label for="username">Nombre de Usuario</label>
+      <input name="username" type="text" id="username" class="input" autocomplete="off" placeholder="info_g10" required="true" />
+      <label for="password">Contraseña</label>
+      <input type="password" name="password" id="password" class="input" autocomplete="off" placeholder="contraseña" required="true"/>
+      <div class="links">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <p>¿Jugás por primera vez?</p>
+        <a href="/registro">Registrate</a>
+      </div>
+      <button type="submit">Ingresar</button>
+        <!--onclick="location.href='/'"-->
+    </form>
 
-</style>
 
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center justify-content-center">
-                <div class="col-lg-8 col-xl-7 col-xxl-6">
-                    <div class="my-5s text-xl-start">
-                        <h1 class="display-5 fw-bolder text-primary mb-3">Es la Fakebook</h1>
-                        <p class="lead fw-normal mb-4">
-                            Fakebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-                    <div class="right bg-light p-3 rounded-3 shadow-lg mb-5">
-                        <div class="login-form ">
-                            <form method="post">
-                                {%csrf_token%}
-                                <div class="input-line p-2 ">
-                                    <label for="username" class="visually-hidden">Nombre de usuario</label>
-                                    <input type="text" class="form-control p-2 " placeholder="Nombre de usuario" name="username" id="username">
-                                </div>
-                                <div class="input-line p-2 ">
-                                    <label for="password" class="visually-hidden">Contraseña</label>
-                                    <input type="password" class="form-control p-2" placeholder="Contraseña" name="password" id="password">
-                                </div>
-                                <div class="d-grid p-2">
-                                    <input class="btn btn-lg btn-primary fw-bold" type="submit" value="Iniciar sesión" />
-                                </div>
-                                <div class="m-2 text-center">
-                                    <a href="#" class="text-primary">¿Olvidaste la contraseña?</a>
-                                </div>
-                            </form>
-                            <a href="/registro" class="btn btn-lg btn-success p-2 fw-bold" >Registrarse</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      {% if form.errors %}
+        <p id="error">Su nombre de usuario y contraseña no coinciden. Por favor revise los datos ingresados e intente nuevamente.</p>
+      {% endif %}
 
+  </div>
 </body>
 </html>

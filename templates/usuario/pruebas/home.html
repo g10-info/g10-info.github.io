@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 
     <!-- Bootstrap -->
-    <!-- link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Imagen de usuario -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -15,10 +15,11 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="pic">
-      <i class="fas fa-user" style="line-height: 60px"></i>
-    </div>
+    <div class="container">
+        <div class="pic">
+            <i class="fas fa-user"></i>
+        </div>
+
         <form class="form">
         {% if request.user.username %}
             <h2 class="title">
@@ -29,10 +30,10 @@
                 <p class="link">¿No eres tú? <a href="/logout">Cerrar sesión</a></p>
             </div>
 
-            <button type="submit">Comenzar a Jugar</button>
+            <button onclick="location.href='/proyecto'"> Comenzar a jugar</button>
         {% else %}
-            <h2 class="title">Bienvenido al Juego de Preguntas sobre la Provincia del Chaco</h2>
-            <button type="submit">Iniciar Sesión</button>
+
+            <a href="/login">Iniciar sesión</a>
         {% endif %}
         </form>
     </div>

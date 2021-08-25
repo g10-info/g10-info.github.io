@@ -2,27 +2,28 @@
 	
 	<head>
 		<title>Proyecto-info</title>
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 	</head>
 	<body>
-		<p>Hola Proyecto</p>
-		<form action="" method="POST">
-    {% csrf_token %}
-        {% for item, value in preguntas.items %}
-            <p>{{ item }}:</p>
-            <select name="{{ forloop.counter }}">
-                <option value="">---------</option>
-                {% for opcion in value %}
-                <option value="{{ opcion.id }}">{{ opcion.opcion }}</option>
-                {% endfor %}
-            </select>
-        <br>
-    {% endfor %}
-    <p></p>
-    <input type="submit" value="Enviar Respuestas">
-    </form>
-
-
-
+        <div class="container">
+            <p>Hola Proyecto</p>
+            <form action="" method="POST">
+            {% csrf_token %}
+            {% for item, value in preguntas.items %}
+                <p>{{ item }}:</p>
+                <select name="{{ forloop.counter }}">
+                    <option value="">---------</option>
+                    {% for opcion in value %}
+                    <option value="{{ opcion.id }}">{{ opcion.opcion }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+            {% endfor %}
+            <input type="submit" value="Enviar Respuestas">
+            </form>
+        </div>
 	</body>
 </html>
 

@@ -6,7 +6,7 @@ def listar_preguntas(request):
     id = [item.id for item in Pregunta.objects.all()]
     posicion = Pregunta.objects.get(pk=id[randrange(len(id))])
     return render(request, 'proyecto/listar_preguntas.html', {"preguntas" : respuestas} )
-    return render(request, 'proyecto/listar_preguntas.html', {})
+
 
 
 from django.shortcuts import render, redirect
@@ -26,12 +26,10 @@ def listar_preguntas(request):
         return redirect("/")
     else:
         data = {}
-        preguntas = Pregunta.objects.all().order_by('?')[:]
+        preguntas = Pregunta.objects.all().order_by('?')[0:]
         for item in preguntas:
             respuestas = Respuesta.objects.filter(id_pregunta=item.id)
             data[item.pregunta]= respuestas
-
-
         return render(request, 'proyecto/listar_preguntas.html', {"preguntas":data})
 
   
