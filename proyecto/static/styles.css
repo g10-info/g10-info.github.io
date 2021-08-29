@@ -17,6 +17,7 @@ body {
     background: #FFF;
     padding: 20px;
     position: relative;
+    border-radius: 20px;
 }
 .form {
     display: flex;
@@ -70,6 +71,16 @@ button {
 }
 .links a {
     color: #6E48AA
+}
+.pregunta {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.opcion {
+    padding: 5px;
+    border-line: solid black 2px;
 }
 #error {
     color: red;

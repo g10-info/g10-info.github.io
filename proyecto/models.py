@@ -15,6 +15,7 @@ class Respuesta(models.Model):
     opcion= models.CharField(max_length=500)
     puntaje= models.IntegerField(null=True)
 
+
 class Partida(models.Model):
     usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)

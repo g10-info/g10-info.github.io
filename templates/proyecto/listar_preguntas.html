@@ -8,18 +8,26 @@
 	</head>
 	<body>
         <div class="container">
-            <p>Hola Proyecto</p>
+            <p>Responde con precisión</p>
             <form action="" method="POST">
             {% csrf_token %}
             {% for item, value in preguntas.items %}
-                <p>{{ item }}:</p>
-                <select name="{{ forloop.counter }}">
-                    <option value="">---------</option>
+                <div class="pregunta">
+                    <p>{{ item }}</p>
+
                     {% for opcion in value %}
-                    <option value="{{ opcion.id }}">{{ opcion.opcion }}</option>
+                    <div class="opcion"><input type="radio" name="{{opcion.id_}}" value="{{opcion.puntaje}}">{{opcion.opcion}}</div>
+                    <!--
+                    <select name="{{ forloop.counter }}">
+                        <option value="">---------</option>
+                        {% for opcion in value %}
+                        <option value="{{ opcion.id }}">{{ opcion.opcion }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    -->
                     {% endfor %}
-                </select>
-                <br>
+                </div>
             {% endfor %}
             <input type="submit" value="Enviar Respuestas">
             </form>
