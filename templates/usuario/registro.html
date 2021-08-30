@@ -22,20 +22,18 @@
     <form class="form" method="POST">
       {% csrf_token %}
       <label for="username">Nombre de Usuario</label>
-      <input type="text" name="username" id="username" class="input" autocomplete="off" placeholder="info_g10" required="true"/>
+      <input type="text" name="username" id="username" class="input" placeholder="info_g10" required/>
 
       <label for="password1">Contraseña</label>
-      <input type="password" id="password1" class="input" autocomplete="off" placeholder="Contraseña" required="true"/>
+      <input type="password" id="password1" name="password1" class="input" placeholder="Contraseña" required/>
 
       <label for="password2">Repetir contraseña</label>
-      <input type="password" id="password2" class="input" autocomplete="off" placeholder="Repetir contraseña" required="true"/>
+      <input type="password" id="password2" name="password2" class="input" placeholder="Repetir contraseña" required/>
 
       <div class="links">
         <a href="/login">¿Ya tenés un usuario?</a>
-        <p>¿Querés un usuario temporal?</p>
-        <a href="#">Sí</a>
       </div>
-      <button type="submit">Registrarse</button>
+      <input  name="_save" type="submit" value="Registrarse"/>
     </form>
   </div>
 </body>

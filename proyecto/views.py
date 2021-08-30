@@ -22,7 +22,7 @@ def listar_preguntas(request):
     contestadas = []
     if request.method == "POST":
         resultado = 0
-        for i in range(1,2):
+        for i in range(1, 2):
             opcion = Respuesta.objects.get(pk=request.POST[str(i)])
             resultado += opcion.puntaje
             contestadas += opcion.id_pregunta
@@ -30,7 +30,7 @@ def listar_preguntas(request):
         return redirect("/")
     else:
         data = {}
-        preguntas = Pregunta.objects.all().order_by('?')[0:]
+        preguntas = Pregunta.objects.all().order_by('?')[0:3]
         for item in preguntas:
             respuestas = Respuesta.objects.filter(id_pregunta=item.id)
             data[item.pregunta]= respuestas
