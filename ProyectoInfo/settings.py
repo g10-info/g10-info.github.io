@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-9v(g-6hd6vte8*1k=pz-sva--2hrfveyrs!yek43@4!pf4=u3d
 DEBUG = True
 
 ALLOWED_HOSTS = [
-"lachacotrivia.herokuapp.com"
+"lachacotrivia.herokuapp.com",
+"127.0.0.1",
 ]
 
 

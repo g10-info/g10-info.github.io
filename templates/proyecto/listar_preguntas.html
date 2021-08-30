@@ -11,16 +11,20 @@
             <p>Responde con precisión</p>
             <form action="" method="POST">
             {% csrf_token %}
+
             {% for item, value in preguntas.items %}
                 <div class="pregunta">
                     <p>{{ item }}</p>
+                    {% with forloop.counter as name %}
 
                     {% for opcion in value %}
                     <div class="opcion">
-                        <input type="radio" id="{{opcion.opcion}}" name="{{opcion.opcion}}" value="{{opcion.puntaje}}">
+                        <input type="radio" id="{{opcion.opcion}}" name="{{name}}" value="{{opcion.puntaje}}">
                         <label for="{{opcion.opcion}}">{{opcion.opcion}}</label>
                     </div>
                     {% endfor %}
+
+                    {% endwith %}
                 </div>
             {% endfor %}
             <input type="submit" value="Enviar Respuestas">

@@ -19,7 +19,7 @@
     <div class="pic">
       <i class="fas fa-user" style="line-height: 60px"></i>
     </div>
-        <form class="form">
+        <div>
         {% if request.user.username %}
             <h2 class="title">
                 Bienvenido <b>{{request.user.username}}</b>
@@ -29,14 +29,13 @@
                 <p class="link">¿No eres tú? <a href="/logout">Cerrar sesión</a></p>
             </div>
 
-            <button type="submit">Comenzar a Jugar</button>
+             <input type="submit" value="Comenzar a jugar" onclick="location.href='/proyecto'"/>
         {% else %}
             <h2 class="title">Bienvenido al Juego de Preguntas sobre la Provincia del Chaco</h2>
-            <button type="submit">Iniciar Sesión</button>
+            <input type="submit" value="Iniciar Sesión" onclick="location.href='/login'"/>
         {% endif %}
-        </form>
+        </div>
     </div>
-    <hr />
 </body>
 
 </html>

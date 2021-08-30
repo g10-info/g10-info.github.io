@@ -76,14 +76,13 @@ label, .links, button {
     margin: 0;
     padding: 5px;
     border-line: solid black 2px;
-
 }
 #error {
     color: red;
     font-size: 10px;
 }
 .opcion input {
-    display: none;
+    "display: none;"
 }
 .opcion label {
     background: #EEEEEE;
@@ -103,8 +102,6 @@ label, .links, button {
 input[type"radio"]:checked + label{
     background: #EEEEEE;
 }
-
-
 input[type="submit"] {
     background: linear-gradient(to right, #1565C0, #90CAF9);
     padding: 8px;
