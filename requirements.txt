@@ -1,0 +1,2 @@
+django
+fpsycopg2-binary
