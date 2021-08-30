@@ -17,18 +17,9 @@
 
                     {% for opcion in value %}
                     <div class="opcion">
-                        <input type="radio" id="{{opcion.opcion}}" name="{{opcion.id_pregunta}}" value="{{opcion.puntaje}}">
-                        <label for="{{opcion.opcion}}"> {{opcion.opcion}} </label>
+                        <input type="radio" id="{{opcion.opcion}}" name="{{opcion.opcion}}" value="{{opcion.puntaje}}">
+                        <label for="{{opcion.opcion}}">{{opcion.opcion}}</label>
                     </div>
-                    <!--
-                    <select name="{{ forloop.counter }}">
-                        <option value="">---------</option>
-                        {% for opcion in value %}
-                        <option value="{{ opcion.id }}">{{ opcion.opcion }}</option>
-                        {% endfor %}
-                    </select>
-                    <br>
-                    -->
                     {% endfor %}
                 </div>
             {% endfor %}
