@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultados</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 </head>
 <body>
-  <div>
-    <h1></h1>
+  <div class="container">
+    <h1> Resultados </h1>
     <table>
-      <td>Usuario</td>
-      <ta><span></span></ta>
-
-      <td>Puntaje</td>
-      <ta><span></span></ta>
-
-      <td>Total de preguntas</td>
-      <ta><span></span></ta>
-
-      <td>Respuestas correctas</td>
-      <ta><span></span></ta>
+      <tr>
+          <td>Usuario</td>
+          <td><span>franco</span></td>
+      </tr>
+        <tr>
+          <td>Puntaje</td>
+          <td><span>50</span></td>
+      </tr>
+        <tr>
+          <td>Total de Preguntas</td>
+          <td><span>40</span></td>
+      </tr>
+        <tr>
+          <td>Respuestas correctas</td>
+          <td><span>20</span></td>
+      </tr>
     </table>
+      <input type="submit" onclick="location.href='/'" value="Volver al Inicio">
   </div>
 </body>
 </html>
