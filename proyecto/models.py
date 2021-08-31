@@ -19,4 +19,4 @@ class Respuesta(models.Model):
 class Partida(models.Model):
     usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)
-    resultado= models.IntegerField()
+    resultado = models.IntegerField()
