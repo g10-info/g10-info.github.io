@@ -1,4 +1,2 @@
-djangodjango
-gunicorn
-django-heroku
-dj-database-url
+django
+psycopg2-binary
