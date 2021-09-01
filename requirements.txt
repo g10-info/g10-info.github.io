@@ -1,4 +1,3 @@
-djangodjango
-gunicorn
-django-heroku
+django
+fpsycopg2-binary
 dj-database-url
