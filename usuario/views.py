@@ -37,6 +37,7 @@ def registro(request):
                 return redirect('/')
     return render(request, "usuario/registro.html", {'form': form})
 
+
 from django.contrib.auth import logout as do_logout
 
 
@@ -50,6 +51,7 @@ def home(request):
 
 
 from django.core import serializers
+from proyecto.models import Partida
 
 
 def results(request):
