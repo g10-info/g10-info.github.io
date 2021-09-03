@@ -6,7 +6,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
-from proyecto.models import Partida
 
 
 def login(request):
@@ -38,7 +37,6 @@ def registro(request):
                 return redirect('/')
     return render(request, "usuario/registro.html", {'form': form})
 
-
 from django.contrib.auth import logout as do_logout
 
 
@@ -50,14 +48,15 @@ def logout(request):
 def home(request):
     return render(request, 'usuario/home.html')
 
-
-from django.core import serializers
-
-
 def results(request):
-    """
+    '''
     muestra una tabla con los resultados de la partida: en proceso
-    """
-    results = serializers.serialize("python", Partida.objects.all())
-    ultima_partida = results[-1]
-    return render(request, "usuario/results.html", {'resul': results})
+    '''
+    usuario = request.user
+    '''
+    fecha_partida = Partida.object
+    resultado = Partida.object.resultado
+    contestadas = 
+    total
+    results[] = [usuario, resultado, contestadas, total]'''
+    return render(request, "usuario/results.html", {'resultados': usuario})
