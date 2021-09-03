@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 class Pregunta(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -19,7 +18,5 @@ class Respuesta(models.Model):
 
 class Partida(models.Model):
     usuario = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    fecha = models.DateTimeField(default=timezone.now())
+    fecha = models.DateTimeField(auto_now_add=True)
     resultado = models.IntegerField()
-    total_preguntas = models.IntegerField(null=True)
-

@@ -8,8 +8,8 @@
 	</head>
 	<body>
         <div class="container">
-            <h2 style="text-align: center">Responde con precisión</h2>
-            <form class="form" action="" method="POST">
+            <p>Responde con precisión</p>
+            <form action="" method="POST">
             {% csrf_token %}
 
             {% for item, value in preguntas.items %}
@@ -20,7 +20,7 @@
                     {% for opcion in value %}
                     <div class="opcion">
                         <input type="radio" id="{{opcion.opcion}}" name="{{name}}" value="{{opcion.puntaje}}">
-                        <label class="radio" for="{{opcion.opcion}}">{{opcion.opcion}}</label>
+                        <label for="{{opcion.opcion}}">{{opcion.opcion}}</label>
                     </div>
                     {% endfor %}
 
@@ -30,7 +30,6 @@
             <input type="submit" value="Enviar Respuestas">
             </form>
         </div>
-
 	</body>
 </html>
 
