@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1> Resultados </h1>
+    <table>
+      <tr>
+          <td>Usuario</td>
+          <td><span>Informatorio</span></td>
+      </tr>
+        <tr>
+          <td>Puntaje</td>
+          <td><span>100%</span></td>
+      </tr>
+        <tr>
+          <td>Total de Preguntas</td>
+          <td><span>2</span></td>
+      </tr>
+        <tr>
+          <td>Respuestas correctas</td>
+          <td><span>2</span></td>
+      </tr>
+    </table>
+      <input type="submit" onclick="location.href='/'" value="Volver al Inicio">
+  </div>
+</body>
+</html>

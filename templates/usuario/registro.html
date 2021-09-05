@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">
+
+    <!-- Bootstrap -->
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+  <div class="container">
+    <div class="pic">
+      <i class="fas fa-user"></i>
+    </div>
+    <h2 class="title">Registro de nuevo usuario</h2>
+    <form class="form" method="POST">
+      {% csrf_token %}
+      <label for="username">Nombre de Usuario</label>
+      <input type="text" name="username" id="username" class="input" placeholder="info_g10" required/>
+
+      <label for="password1">Contraseña</label>
+      <input type="password" id="password1" name="password1" class="input" placeholder="Contraseña" required/>
+
+      <label for="password2">Repetir contraseña</label>
+      <input type="password" id="password2" name="password2" class="input" placeholder="Repetir contraseña" required/>
+
+      <div class="links">
+        <a href="/login">¿Ya tenés un usuario?</a>
+      </div>
+      <input  name="_save" type="submit" value="Registrarse"/>
+    </form>
+  </div>
+</body>
+</html>
